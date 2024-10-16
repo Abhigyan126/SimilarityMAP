@@ -15,6 +15,7 @@ class DocumentSimilarityAppGUI:
         self.root.title("Document Similarity App")
         self.root.geometry("1000x800")  # Default window size
         self.root.resizable(True, True)  # Allow window resizing
+        
 
         # Initialize class variables
         self.folder_path = ''
@@ -153,7 +154,8 @@ class DocumentSimilarityAppGUI:
         # Create a new label to hold the image
         self.image_label = tk.Label(self.image_frame, image=image)
         self.image_label.image = image  # Keep reference to avoid garbage collection
-        self.image_label.pack(side="top", pady=10,padx=10, fill="both", expand=True)
+        self.image_label.pack(side="top", fill="both", expand=True)
+        self.log_label.config(text="MAP generated")
 
     def open_folder(self):
         """Open a dialog to select a folder containing text files."""
